@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>title</title>
+    <script async src=""></script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+	console.log( 'DOMContentLoaded' );
+  //
+  loadJS('https://platform.twitter.com/widgets.js',function(){
+    console.log( 'js載入成功' );
+  });
+
+});
+
+(function() {
+  console.log( 'IIFE 立即函式' );
+  //
+})();
+//document.body.appendChild(document.createElement("script")).src = url;
+
+
+
+//jquery
+try{
+  //adddlert("Welcome guest!");
+  $(document).ready(function() {
+    //全域變數//global
+    time = new Date();
+    //
+    //poi(); //影片
+    $.getScript("ajax/test.js", function(data, textStatus, jqxhr) {
+      console.log(data); //data returned
+      console.log(textStatus); //success
+      console.log(jqxhr.status); //200
+      console.log('Load was performed.');
+    });
+  });
+  //throw "is empty";
+  
+}
+catch(err){
+  	console.log( ''+err.message );
+}
+finally {
+    console.log( 'try-catch-finally' );
+}
+
+
+
+//
+function loadJS(file, callback) {
+  var head = document.getElementsByTagName('head')[0];
+  // DOM: Create the script element
+  var jsElm = document.createElement("script");
+  // set the type attribute
+  jsElm.type = "application/javascript";
+  // make the script element load file
+  jsElm.src = file;
+
+  jsElm.onreadystatechange = callback;
+  jsElm.onload = callback;
+  head.appendChild(jsElm);
+
+  // finally insert the element to the body element in order to load the script
+  //document.body.appendChild(jsElm);
+}
+
+    </script>
+    
+    </head>
+<body>
+index.htm
+</body>
+
+
+</html>
