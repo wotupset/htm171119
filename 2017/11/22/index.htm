@@ -1,0 +1,110 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>title</title>
+    <script async src=""></script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+	console.log( 'DOMContentLoaded' );
+  //
+  loadJS('https://platform.twitter.com/widgets.js',function(){
+    console.log( 'js載入成功' );
+  });
+
+});
+
+(function() {
+  console.log( 'IIFE 立即函式' );
+  //
+})();
+//document.body.appendChild(document.createElement("script")).src = url;
+
+
+
+//jquery
+try{
+  //adddlert("Welcome guest!");
+  $(document).ready(function() {
+    //全域變數//global
+    time = new Date();
+    //
+    //poi(); //影片
+    $.getScript("ajax/test.js", function(data, textStatus, jqxhr) {
+      console.log(data); //data returned
+      console.log(textStatus); //success
+      console.log(jqxhr.status); //200
+      console.log('Load was performed.');
+    });
+  });
+  //throw "is empty";
+  
+}
+catch(err){
+  	console.log( ''+err.message );
+}
+finally {
+    console.log( 'try-catch-finally' );
+}
+
+
+
+//
+function loadJS(file, callback) {
+  var head = document.getElementsByTagName('head')[0];
+  // DOM: Create the script element
+  var jsElm = document.createElement("script");
+  // set the type attribute
+  jsElm.type = "application/javascript";
+  // make the script element load file
+  jsElm.src = file;
+
+  jsElm.onreadystatechange = callback;
+  jsElm.onload = callback;
+  head.appendChild(jsElm);
+
+  // finally insert the element to the body element in order to load the script
+  //document.body.appendChild(jsElm);
+}
+
+    </script>
+    <STYLE>
+#poi {
+  width: 100&;
+  height: 10;
+  border:5px solid red ;
+  display: block;
+}
+	</STYLE>
+    </head>
+<body>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">ラフィーの４コマっぽいやつ。<br>風邪にはきをつけよう～！！<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/wDzPveZaSK">pic.twitter.com/wDzPveZaSK</a></p>&mdash; なじみ(トラック鯖) (@najimi03) <a href="https://twitter.com/najimi03/status/933282778195533824?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">アズールレーンのユニコーン(´ω｀*)白スク水(´ω｀*)♡<br>ネタを頂けたので描いてみました(´ω｀*)♡<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3%E3%81%AE%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーンのお仕事ください</a>　<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/ecCB8Cw0GH">pic.twitter.com/ecCB8Cw0GH</a></p>&mdash; むー＠お仕事募集中です★ (@chocomoo3) <a href="https://twitter.com/chocomoo3/status/933294273734221824?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">ヴァンパイアちゃん<a href="https://twitter.com/hashtag/%E3%81%84%E3%81%84%E3%83%84%E3%82%A4%E3%83%B3%E3%83%86%E3%83%BC%E3%83%AB%E3%81%AE%E6%97%A5?src=hash&amp;ref_src=twsrc%5Etfw">#いいツインテールの日</a>　<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/24oVKr9ZPN">pic.twitter.com/24oVKr9ZPN</a></p>&mdash; まさよ@1日目ミ16b (@blaulac) <a href="https://twitter.com/blaulac/status/933305895395536896?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">ねらってぇ〜・・・・<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/6qKOKLmtjK">pic.twitter.com/6qKOKLmtjK</a></p>&mdash; ちょこころね@ティア戦士ᕦ(ò_óˇ)ᕤ (@koroneko_p0w0q) <a href="https://twitter.com/koroneko_p0w0q/status/933308166904807424?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">過去絵だけどヴァンパイアちゃん　<a href="https://twitter.com/hashtag/%E3%81%84%E3%81%84%E3%83%84%E3%82%A4%E3%83%B3%E3%83%86%E3%83%BC%E3%83%AB%E3%81%AE%E6%97%A5?src=hash&amp;ref_src=twsrc%5Etfw">#いいツインテールの日</a>　<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/BTFGFcGsiF">pic.twitter.com/BTFGFcGsiF</a></p>&mdash; koda@3日目タ-14a (@kodadada) <a href="https://twitter.com/kodadada/status/933310785958199298?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">【艦船紹介】<br>駆逐艦・浜風<br>責任感が強く、何事にも全力で取り組む。その姿は小さく見られがちだが、その裏には垣間見えるのはみんなを守りたいと願う強い意志。小さいな手の温もりに数多くの仲間が助けられた。<br><br>改造も同時実装です！<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/2Fpc5FmHBb">pic.twitter.com/2Fpc5FmHBb</a></p>&mdash; アズールレーン公式 (@azurlane_staff) <a href="https://twitter.com/azurlane_staff/status/933264061231284225?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">ベルファストのお布団に潜り込みたい<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/CY1pBxIXdY">pic.twitter.com/CY1pBxIXdY</a></p>&mdash; Byte@3日目東キ-32b (@byte0713) <a href="https://twitter.com/byte0713/status/933282623505309704?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">中国版アズールレーンにて明日実装予定の「電」と「雷」の新たな衣装が公開されました<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%AC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズレン</a> <a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/1FNQHXKZtt">pic.twitter.com/1FNQHXKZtt</a></p>&mdash; アズールレーン（アズレン）オンライン (@azuren_matome) <a href="https://twitter.com/azuren_matome/status/933252708785520640?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">うちの只今のドック内です　<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/sEcOxzbMZd">pic.twitter.com/sEcOxzbMZd</a></p>&mdash; えろ豆(3日目東Ｚ-14a) (@ermame26) <a href="https://twitter.com/ermame26/status/933181789161512960?ref_src=twsrc%5Etfw">2017年11月22日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">【大陸版 公式告知情報】<br><br>イラストリアスの衣装みたいです<a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a><a href="https://twitter.com/hashtag/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF?src=hash&amp;ref_src=twsrc%5Etfw">#碧蓝航线</a> <a href="https://t.co/YWkdX68VxD">pic.twitter.com/YWkdX68VxD</a></p>&mdash; らっと@戦艦少女R＆アズレン (@Ratto7R) <a href="https://twitter.com/Ratto7R/status/932916369917493248?ref_src=twsrc%5Etfw">2017年11月21日</a></blockquote>
+<div id='poi'></div>
+<blockquote class="twitter-tweet" data-lang="zh-tw"><p lang="ja" dir="ltr">新月ドロップ記念 <a href="https://twitter.com/hashtag/%E3%82%A2%E3%82%BA%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%BC%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#アズールレーン</a> <a href="https://t.co/XqGUGM0EY2">pic.twitter.com/XqGUGM0EY2</a></p>&mdash; うー☆月 (@uduki_81) <a href="https://twitter.com/uduki_81/status/932912056264560641?ref_src=twsrc%5Etfw">2017年11月21日</a></blockquote>
+<div id='poi'></div>
+	
+	
+	
+</body>
+
+
+</html>
