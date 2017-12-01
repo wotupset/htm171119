@@ -20,9 +20,6 @@ php:
   # aliased to a recent hhvm version
   - hhvm
 
-install:
-  - composer install --prefer-dist --no-dev --optimize-autoloader --quiet
 
-script: phpunit -c phpunit.xml --coverage-text
-
+install: php vendor/vendors.php
 
