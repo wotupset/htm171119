@@ -1,0 +1,152 @@
+<html><head>
+<title>http</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+<script>
+/*
+slim版本的jquery 沒有get功能
+*/
+document.addEventListener("DOMContentLoaded", function(event) { 
+	console.log( 'DOMContentLoaded' );
+  //
+});
+
+(function() {
+  console.log( 'IIFE 立即函式' );
+  //
+})();
+//document.body.appendChild(document.createElement("script")).src = url;
+
+
+
+//jquery
+try{
+  //adddlert("Welcome guest!");
+  $(document).ready(function() {
+  
+  	//console.log( jQuery.fn.jquery);
+  	//console.log( $.prototype.jquery);
+  	console.log( $().jquery ); //3.2.1
+	
+
+    //全域變數//global
+	time = new Date();
+	gg=[];
+	gg['poi']='123';
+	gg.ypa='456';
+    //
+	//loadDoc('171025.htm');
+	//
+    poi(); //
+    //poi2('2017/'); //
+	
+  });
+  //throw "is empty";
+  
+}
+catch(err){
+  	console.log( ''+err.message );
+}
+finally {
+    console.log( 'try-catch-finally' );
+}
+
+
+
+//
+function poi() {
+	//
+	$('body').append('<div id="box"></div>');
+	$('div#box').append('<div id="box_year">box_year<br/></div>');
+	$('div#box').append('<div id="box_month">box_month<br/></div>');
+	$('div#box').append('<div id="box_day">box_day<br/></div>');
+
+	//
+	var tmp='';
+	for(var i=1;i<=12;i++){
+		tmp='';
+		tmp=tmp+i;
+		if(i<10){tmp='0'+tmp;}
+		tmp=tmp+'/';
+	    var x=poi2('2017/'+tmp); //
+		//console.log(x);
+
+	}
+	//
+
+	//
+}
+function poi1() {
+	var jqxhr = $.get('2017/12/',{name:"poi",time:1230},function(response,status,xhr){
+		//console.log('$.get');
+		//console.log( this );
+		//console.log( response ); //<html><body>
+		//console.log( status ); //success
+		//console.log( xhr ); //xhr.status=200 xhr.readyState=4 xhr.responseText=<html><body>
+	//function(a,b,c){console.log(a,b,c);}
+	},"text");
+	jqxhr.done(function(response,status,xhr){
+		console.log('jqxhr.done');
+		console.log(xhr,response,status)
+	});
+	jqxhr.fail(function(response,status,xhr){
+		console.log('jqxhr.fail');
+		console.log(response,status,xhr)
+	});
+	jqxhr.always(function(response,status,xhr){
+		console.log('jqxhr.always');
+		console.log(response,status,xhr)
+	});
+	
+}
+
+function poi2(x){
+	var getfile=x;
+	var jqxhr = $.get(getfile,{},function(){},"text");
+	jqxhr.done(function(){
+		//console.log('jqxhr.done');
+		$('div#box_month').append('<button type="button" qwq="open">'+getfile+'</button>');
+		$("div#box_month > button").on('click', function() {
+			console.log( $(this).text() );
+		});
+	});
+	jqxhr.fail(function(){
+		//console.log('jqxhr.fail');
+	});
+	jqxhr.always(function(){
+		//console.log('jqxhr.always');
+	});
+}
+
+function loadDoc(x){//純js
+	var getfile=x;
+	//
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log( this );
+			console.log( this.readyState );
+			console.log( this.status );
+		
+			//document.getElementById("ddd").innerHTML = this.responseText;
+			//poi2();
+		}else{
+			//document.getElementById("ddd").innerHTML = this.status;
+		}
+	};
+	
+	xhttp.open("GET", getfile);
+	xhttp.send();
+}
+
+</script>
+<STYLE>
+</STYLE>
+
+</head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE">
+
+
+
+</body></html>
