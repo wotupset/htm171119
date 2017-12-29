@@ -154,6 +154,7 @@ xhr.onreadystatechange = function(e){
 	  //.getResponseHeader("Last-Modified")
 		var headers = xhr.getAllResponseHeaders().toLowerCase();
 		console.log( headers );
+		console.log( xhr.getResponseHeader("Server") );//個別header
     } else {
       //console.error(xhr.statusText);
     }
@@ -182,7 +183,6 @@ xhr.ontimeout = function (e) {
   console.error(e);
 };
 xhr.send(null);
-console.log( xhr.getResponseHeader("Server") );
 //console.log( document.location );
 //alert(headers);
 //console.log( 0.1+0.2 );
