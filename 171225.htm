@@ -138,11 +138,11 @@ xhr.open('GET', url, 1);//0=同步式請求 等待取得後才繼續
 // `false` makes the request synchronous
 /*
 xhr.readyState
-0: 请求未初始化
-1: 服务器连接已建立
-2: 请求已接收
-3: 请求处理中
-4: 请求已完成，且响应已就绪
+0: 请求未初始化 UNSENT
+1: 服务器连接已建立 OPENED //open() has been called.
+2: 请求已接收 HEADERS_RECEIVED //send() has been called, and headers and status are available.
+3: 请求处理中 LOADING //Downloading; responseText holds partial data.
+4: 请求已完成，且响应已就绪 DONE //The operation is complete.
 */
 xhr.onreadystatechange = function(e){
   console.log('onreadystatechange'+xhr.readyState);
