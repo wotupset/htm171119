@@ -182,6 +182,7 @@ xhr.ontimeout = function (e) {
   console.error(e);
 };
 xhr.send(null);
+console.log( xhr.getResponseHeader("Server") );
 //console.log( document.location );
 //alert(headers);
 //console.log( 0.1+0.2 );
