@@ -38,9 +38,9 @@ try{
     //
 	//loadDoc('171025.htm');
 	//
-    poi(); //
+    //poi(); //
     //poi2('2017/'); //
-	
+	pya();
   });
   //throw "is empty";
   
@@ -61,7 +61,11 @@ function poi() {
 	$('div#box').append('<div id="box_year">box_year<br/></div>');
 	$('div#box').append('<div id="box_month">box_month<br/></div>');
 	$('div#box').append('<div id="box_day">box_day<br/></div>');
+	//
+	$('div#box_year').append('<button type="button" qwq="2017">2017</button>');
+	$('div#box_year').append('<button type="button" qwq="2018">2018</button>');
 
+	
 	//
 	var tmp='';
 	for(var i=1;i<=12;i++){
@@ -118,6 +122,74 @@ function poi2(x){
 		//console.log('jqxhr.always');
 	});
 }
+
+function pya(){
+var url='2017/';
+
+var xhr = new XMLHttpRequest();
+//必須在呼叫 open() 方法開啟請求連線之前就註冊好事件監聽器
+//xhr.addEventListener("progress", function(event){console.log(event);});
+//xhr.addEventListener("loadend", function(e){console.log(e);});
+//下面三種狀況 會觸發上面這行
+//xhr.addEventListener("load", function(event){console.log(event);});
+//xhr.addEventListener("error", function(event){console.log(event);});
+//xhr.addEventListener("abort", function(event){console.log(event);});
+xhr.open('GET', url, 1);//0=同步式請求 等待取得後才繼續
+// `false` makes the request synchronous
+/*
+xhr.readyState
+0: 请求未初始化
+1: 服务器连接已建立
+2: 请求已接收
+3: 请求处理中
+4: 请求已完成，且响应已就绪
+*/
+xhr.onreadystatechange = function(e){
+  console.log('onreadystatechange'+xhr.readyState);
+  //console.log(this);//xhr
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      //console.error(xhr.responseText);
+      //console.log(this);
+	  //.getResponseHeader("Last-Modified")
+		var headers = xhr.getAllResponseHeaders().toLowerCase();
+		console.log( headers );
+    } else {
+      //console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onload = function (e) {
+  console.log('onload');
+  //console.log(e); //與上方progress 相同
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      //console.error(xhr.responseText);
+      //console.log(this);
+	  //.getResponseHeader("Last-Modified")
+    } else {
+      //console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onerror = function (e) {
+  console.log('onerror');
+  console.error(xhr.statusText);
+  
+};
+xhr.ontimeout = function (e) {
+  console.log('ontimeout');
+  console.error(e);
+};
+xhr.send(null);
+//console.log( document.location );
+//alert(headers);
+//console.log( 0.1+0.2 );
+//console.log( (1+2)/10 );
+
+
+}
+
 
 function loadDoc(x){//純js
 	var getfile=x;
